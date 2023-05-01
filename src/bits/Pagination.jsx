@@ -20,7 +20,10 @@ export const Pagination = ({ data, itemsPerPage, setPaginatedData }) => {
 	}, [currentPage, data, itemsPerPage, setPaginatedData]);
 
 	return (
-		<div className="flex items-center justify-center w-full mt-5">
+		<div
+			className={`flex items-center justify-center w-full mt-5 ${
+				data.length < 10 ? "hidden" : ""
+			}`}>
 			<div className="flex items-center justify-center w-1/2">
 				{pageNumbers.map((number) => (
 					<button
