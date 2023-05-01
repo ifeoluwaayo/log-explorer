@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Title } from "./Title";
 
 export const Header = () => {
+	const [isScroll, setIsScroll] = useState(false);
+	const headerRef = useRef(null);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (window.scrollY > headerRef.current.offsetHeight) {
+				setIsScroll(true);
+			} else {
+				setIsScroll(false);
+			}
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
+	}, [isScroll]);
+
 	return (
-		<header className="w-full h-fit">
+		<header className="w-full h-fit" ref={headerRef}>
 			<div className="flex items-center justify-between px-5 md:px-10 py-5 border-b border-gray-200">
 				<h1 className="text-xl md:text-3xl font-medium font-body text-gray-900">
 					<span className="text-blue-500 font-space font-bold">
@@ -28,7 +46,7 @@ export const Header = () => {
 						className="flex items-center gap-1 px-[10px] py-[6px] group text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 hover:transition-all hover:duration-300 hover:scale-95 ease-in-out shadow-md"
 						onClick={() =>
 							window.open(
-								"https://github.com/ifeoluwaayo",
+								"https://github.com/ifeoluwaayo/log-explorer",
 								"_blank"
 							)
 						}>

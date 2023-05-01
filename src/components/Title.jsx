@@ -2,7 +2,7 @@ import React from "react";
 
 export const Title = () => {
 	return (
-		<div className="w-full border-b border-gray-200 py-8 text-4xl pl-16 font-medium flex flex-col">
+		<div className="w-full border-b border-gray-200 py-8 text-4xl lg:pl-16 pl-5 md:pl-8font-medium flex flex-col">
 			<p className="text-base font-light">
 				Welcome back,{" "}
 				<span className="text-blue-500 font-semibold">User</span>

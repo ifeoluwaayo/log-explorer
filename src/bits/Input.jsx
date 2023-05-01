@@ -11,7 +11,7 @@ export const Input = ({ value, onChange }) => {
 				value={value}
 				onChange={onChange}
 			/>
-			<AiOutlineSearch className="absolute right-3 text-gray-500" />
+			<AiOutlineSearch className="absolute right-3 text-gray-500 cursor-pointer" />
 		</div>
 	);
 };
