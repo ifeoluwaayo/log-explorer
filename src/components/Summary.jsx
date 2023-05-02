@@ -2,14 +2,20 @@ import { useEffect, useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 export const Summary = ({ log, stats }) => {
-	const [building, setBuilding] = useState(log.isFirst); // log.building = ["true", "false"
+	const [building, setBuilding] = useState(log.isFirst);
 	const [failed, setFailed] = useState(log.failed);
 
-	// if change in stats, update failed
+	useEffect(() => {
+		if (log.isFirst) {
+			setFailed(null);
+			setBuilding("true");
+		}
+	}, [log.isFirst]);
+
 	useEffect(() => {
 		if (stats !== null) {
 			setFailed(stats);
-			setBuilding(false);
+			setBuilding("false");
 		}
 	}, [stats]);
 

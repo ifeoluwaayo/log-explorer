@@ -333,7 +333,7 @@ export const DeployLog = ({ log, setStats, stats }) => {
 						))}
 						{inProgressDeployLog.length === progressLog.length && (
 							<>
-								<div className="text-sm">
+								<div className="text-sm flex">
 									<span
 										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
 										style={{ minWidth: "2.5rem" }}>
@@ -343,7 +343,7 @@ export const DeployLog = ({ log, setStats, stats }) => {
 										Checking build and deploy status...
 									</span>
 								</div>
-								<div className="text-sm">
+								<div className="text-sm flex">
 									<span
 										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
 										style={{ minWidth: "2.5rem" }}>
