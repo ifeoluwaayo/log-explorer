@@ -5,6 +5,7 @@ import {
 	AiOutlineFieldTime,
 } from "react-icons/ai";
 import { FaEllipsisV } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function getDateAgo(dateString, unit) {
 	const date = new Date(dateString);
@@ -30,6 +31,22 @@ export const Log = ({
 	key,
 }) => {
 	const building = isFirst ? "true" : "false";
+	const id = name.replace(/ /g, "-").toLowerCase();
+
+	const handleClick = () => {
+		localStorage.setItem(
+			"currentLog",
+			JSON.stringify({
+				name,
+				date,
+				time,
+				failed,
+				production,
+				isFirst,
+				image,
+			})
+		);
+	};
 
 	return (
 		<div
@@ -46,7 +63,9 @@ export const Log = ({
 								: "cursor-pointer"
 						}
                     `}>
-						{name}
+						<Link to={`/log/${id}`} onClick={handleClick}>
+							{name}
+						</Link>
 					</p>
 					<p className="text-sm text-gray-500">
 						{production ? "Production " : "Development "}
