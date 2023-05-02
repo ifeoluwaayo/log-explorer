@@ -240,7 +240,7 @@ export const DeployLog = ({ log, setStats, stats }) => {
 				className={`flex flex-row justify-between items-center px-6 py-4 bg-white
                 ${
 					isSectionAtTop
-						? "fixed top-0 lg:left-16 z-10 lg:right-16 md:right-8 md:left-8 right-5 left-5"
+						? "fixed top-0 lg:left-16 z-10 lg:right-16 md:right-8 md:left-8 right-0 left-0"
 						: "relative rounded-t-md"
 				}
                 `}>
@@ -266,7 +266,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 										<div
 											className="text-sm flex"
 											key={index}>
-											<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+											<span
+												className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+												style={{ minWidth: "2.5rem" }}>
 												{index + 1}.
 											</span>
 											<span className="pl-3">{log}</span>
@@ -274,7 +276,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 									</>
 								))}
 								<div className="text-sm">
-									<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+									<span
+										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+										style={{ minWidth: "2.5rem" }}>
 										{failedDeployLog.length + 1}.
 									</span>
 									<span className="pl-3 text-red-500">
@@ -289,7 +293,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 										<div
 											className="text-sm flex"
 											key={index}>
-											<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+											<span
+												className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+												style={{ minWidth: "2.5rem" }}>
 												{index + 1}.
 											</span>
 											<span className="pl-3">{log}</span>
@@ -297,7 +303,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 									</>
 								))}
 								<div className="text-sm">
-									<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+									<span
+										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+										style={{ minWidth: "2.5rem" }}>
 										{successDeployLog.length + 1}.
 									</span>
 									<span className="pl-3 text-blue-500">
@@ -314,7 +322,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 						{progressLog.map((log, index) => (
 							<>
 								<div className="text-sm flex" key={index}>
-									<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+									<span
+										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+										style={{ minWidth: "2.5rem" }}>
 										{index + 1}.
 									</span>
 									<span className="pl-3">{log}</span>
@@ -324,7 +334,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 						{inProgressDeployLog.length === progressLog.length && (
 							<>
 								<div className="text-sm">
-									<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+									<span
+										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+										style={{ minWidth: "2.5rem" }}>
 										{inProgressDeployLog.length + 1}.
 									</span>
 									<span className="pl-3">
@@ -332,7 +344,9 @@ export const DeployLog = ({ log, setStats, stats }) => {
 									</span>
 								</div>
 								<div className="text-sm">
-									<span className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center">
+									<span
+										className="text-gray-400 pl-2 border-r border-gray-200 w-10 flex justify-center"
+										style={{ minWidth: "2.5rem" }}>
 										{inProgressDeployLog.length + 2}.
 									</span>
 									<span className="pl-3">
