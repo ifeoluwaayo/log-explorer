@@ -250,7 +250,7 @@ export const DeployLog = ({ log, setStats, stats }) => {
 				</button>
 			</div>
 			<div
-				className={`bg-gray-800 text-white py-4 rounded-b-md h-screen overflow-y-scroll
+				className={`bg-gray-800 text-white p-4 rounded-b-md h-screen overflow-y-scroll
             ${isSectionAtTop ? "mt-16" : "mt-0"}
             `}>
 				<div className="flex items-center mb-2">
