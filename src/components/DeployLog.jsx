@@ -237,11 +237,11 @@ export const DeployLog = ({ log, setStats, stats }) => {
 			className="mt-10 h-fit gap-3 bg-white shadow-md rounded-md w-full"
 			id="my-section">
 			<div
-				className={`flex flex-row justify-between items-center px-6 py-4 bg-white
+				className={`flex flex-row justify-between items-center px-6 py-4
                 ${
 					isSectionAtTop
-						? "fixed top-0 lg:left-16 z-10 lg:right-16 md:right-8 md:left-8 right-0 left-0"
-						: "relative rounded-t-md"
+						? "fixed top-0 lg:left-16 z-10 lg:right-16 md:right-8 md:left-8 right-0 left-0 bg-[#f7fafc] shadow-sm md:bg-white"
+						: "relative rounded-t-md bg-white"
 				}
                 `}>
 				<h3 className="text-xl font-semibold">Deploy Log</h3>
