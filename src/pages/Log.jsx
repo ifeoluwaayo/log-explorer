@@ -3,6 +3,7 @@ import { DeployLog, Header, Summary } from "../components";
 
 export const Log = () => {
 	const [log, setLog] = useState(null);
+	const [stats, setStats] = useState(null);
 
 	useEffect(() => {
 		const currentLog = JSON.parse(localStorage.getItem("currentLog"));
@@ -10,7 +11,8 @@ export const Log = () => {
 		if (currentLog) {
 			setLog(currentLog);
 		}
-	}, []);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [localStorage.getItem("currentLog")]);
 
 	return (
 		<div>
@@ -18,8 +20,12 @@ export const Log = () => {
 			<div className="lg:px-16 py-6 px-5 md:px-8">
 				{log ? (
 					<div className="flex flex-col">
-						<Summary log={log} />
-						<DeployLog log={log} />
+						<Summary log={log} stats={stats} />
+						<DeployLog
+							log={log}
+							stats={stats}
+							setStats={setStats}
+						/>
 					</div>
 				) : (
 					// center the loading spinner
